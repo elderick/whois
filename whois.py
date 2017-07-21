@@ -1,11 +1,12 @@
 #!/usr/bin/python
+#-*- coding: UTF-8 -*-
 import socket, sys, re
  
 #whois query generico que ira trazer o retorno
-def genericWhois(server , url) :
-    #Conexão com o socket
+def genericWhois(server , query) :
+    #Conexao com o socket
     s = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
-    s.connect((server , 43))
+    s.connect((str(server), 43))
     #Enviando dados
     s.send(query + '\r\n')
      

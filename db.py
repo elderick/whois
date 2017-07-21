@@ -12,11 +12,10 @@ def getWhois(url):
     if "." in ext:
         ext=ext.replace(".","")
     data = db.tld.find_one({"ext":str(ext)})
-    if len(cursor) > 0:
+    if len(data) > 0:
         return data[u'host']
-    
-    json_docs = [json.dumps(doc, default=json_util.default) for doc in cursor]
-    return json_docs
+    else:
+        return ""
 
 
 def verify(url):
@@ -24,10 +23,11 @@ def verify(url):
     db = connection["whois"]
     db.authenticate("whoisbot", "whoisbot10")
     data = db.data.find_one({"url":str(url)})
-    if len(cursor) > 0:
+    if data is not None:
         return data[u'data']
     else:
-        msg = genericWhois(getWhois(url),url)
+        host = getWhois(url)
+        msg = genericWhois(host,url)
         save(url,msg)
         return msg
 

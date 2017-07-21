@@ -4,7 +4,7 @@ from bottle import error,response,request
 from db import verify
 
 # <-- Para rodar em debug -->:
-# Para rodar em e não ter problema de bloqueio nas requests da api descomente o CORS 
+# Para rodar em e nao ter problema de bloqueio nas requests da api descomente o CORS 
 class EnableCors(object):
     name = 'enable_cors'
     api = 2
@@ -28,7 +28,7 @@ def whois():
     # -->> GET
     # -->> /whois?url='URL_ PROCURADA'
     # -->> Recebe a url procurada, chama a função que verifica se a url já está no banco e retorna as informações do dominio.
-    return verify(request.params['url']info)
+    return verify(request.params['url'])
 
 
 @error(404)
