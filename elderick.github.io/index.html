@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Whois</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+</head>
+
+<body class="align">
+  <form class="form-wrapper cf" onsubmit="search(this)">
+    <input type="text" id="url" placeholder="Digite o nome do domínio" required>
+    <button type="submit">Pesquisar</button>
+  </form>
+  <div id='square'>asssssssssssssssss</div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  function search() {
+    // $.ajax({
+    //   url: "https://whoisappp.herokuapp.com/whois?url=plugar.com.br",
+    //   // url: "http://localhost:8081/whois?url=" + $('#url')[0].value,
+    //   data: {},
+    //   success: function (result) {
+    //     $("#square").html(result);
+    //   }
+    // });
+    axios.get('https://whoisappp.herokuapp.com/whois?url=plugar.com.br', {
+    params: {
+        url: + $('#url')[0].value
+      }
+    })
+    .then(function (response) {
+      debugger;
+       $("#square").html(response);
+    })
+    .catch(function (error) {
+      debugger;
+      console.log(error);
+    });
+  }
+
+</script>
+
+</html>
