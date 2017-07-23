@@ -20,7 +20,7 @@
   function search() {
     $.ajax({
       // url: "https://whoisappp.herokuapp.com/whois?url=plugar.com.br",
-      url: "http://localhost:8081/whois?url=" + $('#url')[0].value,
+      url: "https://whoisappp.herokuapp.com/whois?url=" + $('#url')[0].value,
       data: {},
       success: function (result) {
         $("#square").text(result);
