@@ -15,30 +15,16 @@
   </form>
   <pre id='square'></pre>
 </body>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
   function search() {
     $.ajax({
-      url: "https://whoisappp.herokuapp.com/whois?url=plugar.com.br",
-      // url: "http://localhost:8081/whois?url=" + $('#url')[0].value,
+      // url: "https://whoisappp.herokuapp.com/whois?url=plugar.com.br",
+      url: "http://localhost:8081/whois?url=" + $('#url')[0].value,
       data: {},
       success: function (result) {
-        $("#square").value(result);
+        $("#square").text(result);
       }
-    // });
-    // axios.get('https://whoisappp.herokuapp.com/whois?url=plugar.com.br', {
-    // params: {
-    //     url: + $('#url')[0].value
-    //   }
-    // })
-    // .then(function (response) {
-    //   debugger;
-    //    $("#square").html(response);
-    // })
-    // .catch(function (error) {
-    //   debugger;
-    //   console.log(error);
     });
   }
 
