@@ -13,7 +13,7 @@
     <input type="text" id="url" placeholder="Digite o nome do domínio" required>
     <button type="button" onclick="search(this)">Pesquisar</button>
   </form>
-  <div id='square'></div>
+  <pre id='square'></pre>
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -24,7 +24,7 @@
       // url: "http://localhost:8081/whois?url=" + $('#url')[0].value,
       data: {},
       success: function (result) {
-        $("#square").html(result);
+        $("#square").value(result);
       }
     // });
     // axios.get('https://whoisappp.herokuapp.com/whois?url=plugar.com.br', {
