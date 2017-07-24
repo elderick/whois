@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Whois</title>
@@ -9,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="css/search.css" rel="stylesheet">
 </head>
-
 <body class="align">
   <div class="container">
     <div class="col-md-12 marginsearch">
@@ -18,9 +16,9 @@
       </div>
       <div class="col-md-8">
         <div class="col-md-12 title">WHOIS</div>
-        <form class="col-md-12 form-wrapper ">
-          <input type="url" id="url" placeholder="Digite o nome do domínio"  onkeydown = "if (event.keyCode == 13) document.getElementById('search').click()" required >
-          <button type="button" id="search" onclick="search(this)">Pesquisar</button>
+        <form class="col-md-12 form-wrapper">
+          <input type="text" id="url" placeholder="Digite o nome do domínio" required></input>
+          <button type="button" id="searchbutton" onclick="search(this)">Pesquisar</button>
         </form>
       </div>
     </div>
@@ -35,23 +33,29 @@
   </div>
   </div>
 </body>
-
 <script src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+  // Ao carregar a pagina esconde a caixa que exibe o resultado da pesquisa
   $(document).ready(function () {
-    $(".box-cinza").hide();
+    $(".box").hide();
   });
+  //função que chama api passando os o parametro de URL
   function search() {
     $.ajax({
       url: "https://whoisappp.herokuapp.com/whois?url=" + $('#url')[0].value,
       data: {},
       success: function (result) {
+        // Insere o texto e mostra a exibe a caixa com o resultado da pesquisa
         $("#square").text(result);
-        $(".box-cinza").show();
+        $(".box").show();
       }
     });
   }
+  // funcao para carregar pesquisar quando o enter for pressionado e não ter reload na tela
+  $(".form-wrapper").submit(function () {
+    search();
+    return false;
+  });
 
 </script>
-
 </html>
