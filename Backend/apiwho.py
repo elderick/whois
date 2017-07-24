@@ -49,7 +49,7 @@ def error404(error):
 app.install(EnableCors())
 
 # <-- Para rodar em debug -->:
-# app.run(host='localhost', port=8081, debug=True)
+app.run(host='localhost', port=8081, debug=True)
 
 #<-- Para rodar em prod (heroku) -->:
-app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+# app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
