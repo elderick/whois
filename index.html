@@ -9,21 +9,34 @@
 </head>
 
 <body class="align">
-  <form class="form-wrapper cf">
-    <input type="text" id="url" placeholder="Digite o nome do domínio" required>
-    <button type="button" onclick="search(this)">Pesquisar</button>
-  </form>
-  <pre id='square'></pre>
+  <div class="marginsearch">
+    <img src="/img/aumblerito.png" class="umblerito"></img>
+    <div>
+      <div class="title">WHOIS</div>
+        <form class="form-wrapper ">
+          <input type="text" id="url" placeholder="Digite o nome do domínio" required>
+          <button type="button" onclick="search(this)">Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="box-cinza">
+    <pre id='square'></pre>
+  </div>
 </body>
+
 <script src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+  $(document).ready(function() {
+    $(".box-cinza").hide();
+  });
   function search() {
     $.ajax({
-      // url: "https://whoisappp.herokuapp.com/whois?url=plugar.com.br",
       url: "https://whoisappp.herokuapp.com/whois?url=" + $('#url')[0].value,
       data: {},
       success: function (result) {
         $("#square").text(result);
+        $(".box-cinza").show();
       }
     });
   }
