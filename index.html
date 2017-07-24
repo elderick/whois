@@ -19,8 +19,8 @@
       <div class="col-md-8">
         <div class="col-md-12 title">WHOIS</div>
         <form class="col-md-12 form-wrapper ">
-          <input type="text" id="url" placeholder="Digite o nome do domínio" required>
-          <button type="button" onclick="search(this)">Pesquisar</button>
+          <input type="url" id="url" placeholder="Digite o nome do domínio"  onkeydown = "if (event.keyCode == 13) document.getElementById('search').click()" required >
+          <button type="button" id="search" onclick="search(this)">Pesquisar</button>
         </form>
       </div>
     </div>
@@ -28,7 +28,7 @@
   </div>
   <div class="col-md-12">
     <div class="col-md-2"></div>
-    <div class="col-md-8 box-cinza">
+    <div class="col-md-8 box">
       <pre id='square'></pre>
     </div>
     <div class="col-md-2"></div>
