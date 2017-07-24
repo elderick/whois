@@ -25,5 +25,5 @@ You can try all the features here: https://elderick.github.io/whois/
 Request example:
 `https://whoisappp.herokuapp.com/whois?url=google.com`
 
-Debbug request example: (**Dont Forget to run api in debug**)
-`https://whoisappp.herokuapp.com/whois?url=google.com`
+Debug request example: (**Dont Forget to run api in debug**)
+`http://localhost:8081/whois?url=terra.com.br`
