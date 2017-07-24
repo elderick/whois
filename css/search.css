@@ -12,9 +12,6 @@
  
 
     #square{
-        display: block;
-        padding: 9.5px;
-        margin: 0 14px 10px;
         font-size: 13px;
         line-height: 1.42857143;
         color: #333;
@@ -115,27 +112,23 @@
 
 .box-cinza {
     background: #f2f2f0;
-    float: left;
-    margin-left: 26%;
     padding-top: 13px;
     margin-bottom: 25px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 44%;
 }
 .aumblerito{
     width: 170;
-    height: 170px;
-    float: left;
-    margin-left: 550px;
+    margin-left: 220px;
 }
 
 .title {
-    padding-top: 20px;
+    padding-top: 36px;
     letter-spacing: 1px;
     font-size: 55px;
     font-weight: 900;
-    margin-right: 39%;
+    text-align: left;
+    margin-left: 112px;
 }
 .marginsearch{
     padding-top: 125px;
