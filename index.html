@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Whois</title>
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="css/search.css" rel="stylesheet">
 </head>
+
 <body class="align">
   <div class="container">
     <div class="col-md-12 marginsearch">
@@ -24,6 +26,18 @@
     </div>
   </div>
   </div>
+  <div class='col-md-12 domainsquare'>
+    <div class="col-md-2"></div>
+    <div class='col-md-4 '>
+        <div class="floatleft domaintitle">Domínio:</div>
+        <div class="floatleft text"  id="domain"></div>
+      </div>
+      <div class='col-md-4'>
+        <div class="floatleft hosttitle">Provedor:</div>
+        <div class="floatleft text" id="host"></div>
+      </div>
+      <div class="col-md-2"></div>
+  </div>
   <div class="col-md-12">
     <div class="col-md-2"></div>
     <div class="col-md-8 box">
@@ -38,6 +52,7 @@
   // Ao carregar a pagina esconde a caixa que exibe o resultado da pesquisa
   $(document).ready(function () {
     $(".box").hide();
+    $(".domainsquare").hide();
   });
   //função que chama api passando os o parametro de URL
   function search() {
@@ -46,8 +61,11 @@
       data: {},
       success: function (result) {
         // Insere o texto e mostra a exibe a caixa com o resultado da pesquisa
-        $("#square").text(result);
+        $("#square").text(result["data"]);
+        $("#domain").text(result["url"]);
+        $("#host").text(result["host"]);
         $(".box").show();
+        $(".domainsquare").show();
       }
     });
   }
@@ -58,4 +76,5 @@
   });
 
 </script>
+
 </html>

@@ -140,3 +140,27 @@
     padding-top: 125px;
 }
 /*-------------------------------------------------*/
+
+.floatleft{
+    float: left
+}
+.domainsquare{
+    padding-bottom: 30px;
+}
+.domaintitle{
+    padding-left: 50px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.text{
+    padding-left: 5px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.hosttitle{
+    padding-left: 100px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
