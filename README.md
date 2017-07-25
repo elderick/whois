@@ -1,8 +1,8 @@
 # Whois
 You can try all the features here: https://elderick.github.io/whois/
 
-database hosting: https://mlab.com/
-api hosting:https://www.heroku.com/
+- database hosting: https://mlab.com/
+- api hosting:https://www.heroku.com/
 
 
 ## How to run api in debug:
@@ -31,3 +31,8 @@ Request example:
 
 Debug request example: (**Dont Forget to run api in debug**)
 `http://localhost:8081/whois?url=terra.com.br`
+
+
+## TODO:
+- Remove subdomains from the domain field
+- Improve "De/Para"
