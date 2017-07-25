@@ -1,6 +1,10 @@
 # Whois
 You can try all the features here: https://elderick.github.io/whois/
 
+database hosting: https://mlab.com/
+api hosting:https://www.heroku.com/
+
+
 ## How to run api in debug:
 - Install python https://www.python.org/ (make sure to install version **2.7**)
 - Open the folder Backend.
