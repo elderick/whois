@@ -1,5 +1,6 @@
 # Whois
 You can try all the features here: https://elderick.github.io/whois/
+-Please be patient on the first query, we need to wakeup some heroku dinos and put they to work(they are soo lazy!).
 
 - database hosting: https://mlab.com/
 - api hosting:https://www.heroku.com/
